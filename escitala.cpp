@@ -4,32 +4,33 @@ using namespace std;
 
 class AlgoritmoCifrado_1{
 	private:
-		int clave=21;
+		int clave=111;
 	public:
 		string cifrar(string &msg, int c=0){
 			c+=1;
 			string msg2;
 			//Separar las cifras de la clave.
-			int nfi=(int)clave/10,rep=clave%10;
+			int nco=(int)clave/10,rep=clave%10;
 			//Hallar numero de caracteres.
 			int car =0;
 			for(int x=0;x<msg.length();x++){
-				car++;
+				car++;	
 			}
+				//cout<<"Col: "<<car/nco<<endl;
 			//Regulando division de caracteres.
-			while (car%nfi!=0){
+			while (car%nco!=0){
 				car+=1;
 			}
 			for(int x=0;x<(car-msg.length());x++){
 				msg.push_back(' ');
 			}
 			//Generando mensaje cifrado.
-			for(int x=0;x<nfi;x++){
+			for(int x=0;x<nco;x++){
 				for(int i=0;i<car;){
 					if(msg[i]!='*'){
 						msg2.push_back(msg[i]);
 						msg[i]='*';
-						i+=nfi;
+						i+=nco;
 					}else{
 						i++;
 					}
@@ -47,14 +48,14 @@ class AlgoritmoCifrado_1{
 			c+=1;
 			string msg2;
 			//Separar las cifras de la clave.
-			int nfi=msg.length()/((int)clave/10),rep=clave%10;
-			//Generando descifración.
-			for(int x=0;x<nfi;x++){
+			int nco=msg.length()/((int)clave/10),rep=clave%10;
+			//Generando descifraciÃ³n.
+			for(int x=0;x<nco;x++){
 				for(int i=0;i<msg.length();){
 					if(msg[i]!='*'){
 						msg2.push_back(msg[i]);
 						msg[i]='*';
-						i+=nfi;
+						i+=nco;
 					}else{
 						i++;
 					}
