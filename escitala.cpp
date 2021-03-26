@@ -4,7 +4,7 @@ using namespace std;
 
 class AlgoritmoCifrado_1{
 	private:
-		int clave=111;
+		int clave=21;
 	public:
 		string cifrar(string &msg, int c=0){
 			c+=1;
