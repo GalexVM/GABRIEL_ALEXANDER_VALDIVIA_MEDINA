@@ -1,6 +1,6 @@
 # GABRIEL_ALEXANDER_VALDIVIA_MEDINA
 Primer escitala:
-Cumplia con la transposicion de matriz sin usar matrices. Sin embargo no utiliza una clave de filas y columnas, si no de columnas de de repeticiones de transposición. Puede comunicarse con otros escitala si se descomenta la fila 19 para saber el numero de filas.
+Cumplia con la transposicion de matriz sin usar matrices. Sin embargo no utiliza una clave de filas y columnas, si no de columnas y de repeticiones de transposición (se cifra multiples veces). Puede comunicarse con otros escitala si se descomenta la fila 19 para saber el numero de filas y si la repeticion se baja a 1. Para saber más consultar versiones anteriores del README.
 
 Escitala arreglado:
 Cumple con tener una claver de filas y columnas y se comunica satisfactoriamente con otros escitalas (incluyendo el alterior presentado).
