@@ -1,10 +1,18 @@
 # GABRIEL_ALEXANDER_VALDIVIA_MEDINA
-Algoritmo de cifrado y descifrado.
-En este algoritmo las claves se componen de ints de 2 cifras.
-La primera cifra representa el rango de números que se agrupan para luego cifrar en orden. (como si fueran las columnas en la versión con matriz). Por defecto se encuentra en 2, para poder cifrar palabras pequeñas de hasta 3 letras.
-La segunda cifra representa el número de veces en las que se cifrará el código usando la misma técnica (un añadido extra para reforzar el cifrado). Por defecto está en 1 porque es algo que no se pidió, pero puede incrementarse hasta 9. 
-Nota: Si la segunda cifra es el doble o el cuádruple de la primera, el algoritmo devolverá al mensaje a su estado original. Por esta razón lo dejé por defecto en 1, pero si la primera cifra es cambiada a 5 o más (para cifrar mensajes largos), se podrá usar la segunda cifra sin ninguna restricción.
+Primer escitala:
+Cumplia con la transposicion de matriz sin usar matrices. Sin embargo no utiliza una clave de filas y columnas, si no de columnas de de repeticiones de transposición. Puede comunicarse con otros escitala si se descomenta la fila 19 para saber el numero de filas.
 
-Se utilizó una clase para crear al emisor y receptor, la clave se mantiene privada y las funciones se encargan de cifrar y descifrar el mensaje enviado. Para los cifrados múltiples implementé recursividad en estas funciones. Por defecto la segunda cifra de la clave es 1 por lo que no se apreciará esta recursividad hasta cambiarla.
+Escitala arreglado:
+Cumple con tener una claver de filas y columnas y se comunica satisfactoriamente con otros escitalas (incluyendo el alterior presentado).
+La lógica empleada fue la siguiente:
+  1. Calcular el máximo de espacios dependiendo de la clave (filas * columnas)
+  2. Comparar ese número con el largo del string ingresado.
+  2.1  Si el string es más pequeño, se le añaden especios en blanco hasta completar.
+  2.2. Si es más grande, se recorta lo sobrante y se emite un mensaje de alerta de error de claves.
+  3. Se itera el string 2 veces. La iteración mayor se repite (nColumnas) veces.
+  4. La iteración menor avanza por el string normalmente, cuando llega a un caracter que no sea un * hace 3 cosas:
+  4.1. Envía el valor a un string vacío llamado msg2.
+  4.2. Convierte el valor en un * .
+  4.3. Salta (nColumnas) casillas.
+  5. En el descifrado el proceso es igual desde el punto 3, solo que en lugar de trabajar con nColumnas trabaja con nFilas.
 
-COMPATIBILIDAD: Cometí un error al no usar filas y columnas en la clave como se indicó, pero pensé que omitir las filas haría que al algoritmo sea más flexible con mensajes largos. De todos modos, este algoritmo puede leer codigos cifrados del algoritmo con filas y columnas, solo se tiene que cambiar la primera cifra de la clave (no importa si es mayor a 9) por el número de filas de la clave del mensaje que viene. En el caso inverso, El algoritmo sabe implícitamente el número de columnas de cada caso. (de hecho en la línea 19 hay un cout comentado que da esta información).
