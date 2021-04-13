@@ -4,12 +4,12 @@ using namespace std;
 
 class AlgCifradoRailFence{
 	private:
-		int clave =5;
+		int clave =4;
 	public:
 		string cifrar(string &msg){
 			string msg2;
 			int tamOla = (2*clave)-2;
-			//preparar cifrado(nro carácteres).
+			//preparar cifrado(nro carÃ¡cteres).
 			if((msg.length()-1)%tamOla != 0){
 				if((msg.length()-1)%tamOla >(tamOla/2)){
 					while((msg.length()-1)%tamOla != 0){
@@ -68,7 +68,7 @@ class AlgCifradoRailFence{
 							msg[i]='*';
 							if(msg2[j-1]=='|')msg2[j-1]='*';
 							if(msg2[j+1]=='|')msg2[j+1]='*';
-							j+=msg2.length();//Termina la iteración para que i avance.)
+							j+=msg2.length();//Termina la iteraciÃ³n para que i avance.)
 						}
 					}
 				}
@@ -92,11 +92,8 @@ int main(){
 	ingresarMensaje(msg);
 	string msgCifrado=emisor.cifrar(msg);
 	cout<<"...Cifrando su mensaje..."<<endl<<msgCifrado<<endl;
-	string r="Mxiviettnaestostl m  iacod ";
-	string msgDescifrado=receptor.descifrar(r);
-
+	string msgDescifrado=receptor.descifrar(msgCifrado);
 	cout<<"...Descifrando su mensaje..."<<endl<<msgDescifrado<<endl;
-	
 	
 	return 0;
 }
